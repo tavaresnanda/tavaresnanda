@@ -1,0 +1,51 @@
+programa {
+  funcao inicio() {
+    
+    inteiro op
+
+    escreva("---------------------------- \n")
+    leia()
+    escreva("   | Sistema de Votação | \n")
+    leia()
+    escreva("---------------------------- \n")
+    leia()
+
+    menu()
+  }
+
+    funcao menu(){
+
+      inteiro esc
+
+      escreva(" Qual Candidato Você Deseja Votar? \n")
+      escreva(" 1- Votar em João \n 2- Votar em Maria \n 3- Votar em Marcos \n")
+      leia(esc)
+      limpa()
+
+      escolha(esc){
+
+        caso 1:
+      escreva("Você votou em João")
+      pare
+      caso 2:
+      escreva("Você votou em Maria")
+      pare
+       caso 3:
+      escreva("Você votou em Marcos")
+      pare
+
+      caso contrario: escreva(" 4- Votar em Branco \n 5- Anular Voto \n")
+
+      caso 4: 
+      escreva("Você votou em Branco")
+      pare 
+      caso 5:
+      escreva("Você votou Nulo")
+      pare
+      }
+
+      escreva("\n Votação Finalizada \n")
+      leia()
+
+     }
+     
