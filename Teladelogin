@@ -1,1 +1,30 @@
-.
+import flet as ft
+
+#comando para criação de página em branco
+def main(page: ft.Page):
+    page.bgcolor = '#ffffff'
+    page.window_center()
+    page.window_width = '350'
+    page.window_height = '400'
+    page.window_resizable = False
+    page.padding = 75
+    page.window_maximizable = False
+
+    #comando para criar botão
+    btn = ft.FilledButton(text='Acessar')
+    btn.bgcolor = '#87CEFA'
+    btn.width = '500'
+
+    #botão de texto esqueci minha senha
+    btn_es = ft.TextButton(text="Esqueceu a senha?")
+    btn_es.width = '500'
+
+    #comando para entrada de dados
+    txt_usuario = ft.TextField (label="Usuario")
+    txt_senha = ft.TextField(label= "Senha", password= True, can_reveal_password= True)
+
+
+
+
+    page.add(txt_usuario, txt_senha, btn, btn_es)
+ft.app(main)
