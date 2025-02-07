@@ -1,0 +1,36 @@
+import flet as ft
+
+def main (page: ft.Page):
+    page.window_center()
+    page.bgcolor = '#0F0F26'
+    page.window_width = '500'
+    page.window_height = '600'
+    page.window_resizable = False
+    page.window_maximizable = False
+    page.padding=50
+
+
+    c1=ft.Container(
+        padding=30,
+        bgcolor='#F2D22E',
+        width=400,
+        height=500,
+        border_radius=10,
+        alignment=ft.alignment.center,
+        content= ft.Column([
+
+
+            ft.Image ( src = f'usuario.png', width = 500, height = 80, fit = ft.ImageFit.CONTAIN),
+            ft.TextField ( label = "Telefone ou Email"),
+            ft.TextField (label = "Nome"),
+             ft.TextField (label = "Usuário"),
+            ft.TextField (label = "Senha", password = True, can_reveal_password = True),
+            ft.FilledTonalButton (text = 'Cadastrar', width = 500),
+            ft.TextButton (text = "Voltar ao inicio", width = 500),
+        ]) 
+    )
+
+
+     
+    page.add(c1)
+ft.app(target=main)
