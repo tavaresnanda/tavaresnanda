@@ -1,0 +1,20 @@
+import flet as ft
+
+def main(page):
+    page.window.center()
+    page.window.width = 768
+    page.window.height = 500
+    page.bgcolor = "#ffffff"
+
+    
+    
+    tc = ft.Container(
+    bgcolor = "#557dff",
+    width = 350,
+    height = 435,
+    border_radius = 10,
+    padding= 20
+    )
+
+    page.add(tc)
+ft.app(target = main)
