@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Doação de Alimentos</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background: #2F55A4;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 650px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2F55A4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background: #f1c056;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1f3f78;
+        }
+
+        .mensagem {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Formulário de Doação ❤️</h1>
+    <p>Preencha as informações sobre a doação de alimentos</p>
+</header>
+
+<main>
+    <h2>Doação para: <span id="nomeInstituicao"></span></h2>
+
+    <form id="doacaoForm">
+
+        <label>Tipo de alimento:</label>
+        <input type="text" name="tipo" placeholder="Ex: Arroz, Feijão, Pães" required>
+
+        <label>Estado do alimento:</label>
+        <select name="estado" required>
+            <option value="">Selecione</option>
+            <option>Em bom estado</option>
+            <option>Perecível</option>
+            <option>Não perecível</option>
+        </select>
+
+        <label>Quantidade aproximada:</label>
+        <input type="number" name="quantidade" placeholder="Ex: 10 unidades / kg" required>
+
+        <label>Data de validade:</label>
+        <input type="date" name="validade" required>
+
+
+        <button type="submit">Enviar Doação</button>
+    </form>
+
+</main>
+
+<script>
+    // Pegar o nome da instituição da URL
+    const params = new URLSearchParams(window.location.search);
+    const item = params.get('item') || "Instituição";
+    document.getElementById('nomeInstituicao').innerText = item;
+
+    // Submissão do formulário
+    document.getElementById('doacaoForm').addEventListener('submit', function(e){
+        e.preventDefault(); // evita que a página recarregue
+
+        // Pegar valores do formulário (opcional, se quiser enviar dados via query string)
+        const tipo = this.tipo.value;
+        const estado = this.estado.value;
+        const quantidade = this.quantidade.value;
+        const validade = this.validade.value;
+
+        // Redirecionar para a página de agradecimento, passando o nome da instituição
+        window.location.href = `obrigado.html?item=${encodeURIComponent(item)}`;
+    });
+</script>
+
+</body>
+</html>
