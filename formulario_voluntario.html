@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Voluntariado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background: #2F55A4;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 650px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2F55A4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background: #f1c056;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1f3f78;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Formulário de Voluntariado ❤️</h1>
+    <p>Preencha suas informações para se tornar voluntário</p>
+</header>
+
+<main>
+    <h2>Instituição: <span id="nomeInstituicao"></span></h2>
+
+    <form id="voluntarioForm">
+
+        <label>Nome Completo:</label>
+        <input type="text" name="nome" placeholder="Seu nome completo" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="exemplo@email.com" required>
+
+        <label>Telefone:</label>
+        <input type="tel" name="telefone" placeholder="(XX) XXXXX-XXXX">
+
+        <label>Disponibilidade (dias/horários):</label>
+        <textarea name="disponibilidade" rows="3" placeholder="Ex: Seg, Qua, Sex à tarde"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</main>
+
+<script>
+    // Pegar o nome da instituição da URL
+    const params = new URLSearchParams(window.location.search);
+    const instituicao = params.get('instituicao') || "Instituição";
+    document.getElementById('nomeInstituicao').innerText = instituicao;
+
+    // Submissão do formulário
+    document.getElementById('voluntarioForm').addEventListener('submit', function(e){
+        e.preventDefault();
+
+        // Redirecionar para a página de agradecimento
+        window.location.href = `obrigado_voluntario.html?instituicao=${encodeURIComponent(instituicao)}`;
+    });
+</script>
+
+</body>
+</html>
