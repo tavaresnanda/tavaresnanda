@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação do Item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background: #2F55A4;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 650px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2F55A4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background: #f1c056;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1f3f78;
+        }
+
+        .mensagem {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Avaliação do Item Doado ❤️</h1>
+    <p>Responda algumas perguntas sobre o que você vai doar </p>
+</header>
+
+<main>
+    <h2>Informações do Item</h2>
+
+    <form onsubmit="enviarFormulario(event)">
+
+        <label>O que você vai doar?</label>
+        <select name="tipoItem" required>
+            <option value="">Selecione</option>
+            <option>Roupas</option>
+            <option>Móveis</option>
+            <option>Brinquedos</option>
+            <option>Outros</option>
+        </select>
+
+        <label>Estado do item</label>
+        <select name="estadoItem" required>
+            <option value="">Selecione</option>
+            <option>Novo</option>
+            <option>Usado em ótimo estado</option>
+            <option>Usado em bom estado</option>
+            <option>Precisa de pequenos reparos</option>
+        </select>
+
+        <label>Quantidade aproximada</label>
+        <input type="number" name="quantidadeItem" placeholder="Ex: 10" required>
+
+        <label>O item está limpo e pronto para uso?</label>
+        <select name="limpoPronto" required>
+            <option value="">Selecione</option>
+            <option>Sim</option>
+            <option>Não</option>
+        </select>
+
+        <button type="submit">Enviar Doação</button>
+    </form>
+
+    <p class="mensagem" id="mensagem">
+        Obrigado! Suas informações foram enviadas com sucesso 🙌
+    </p>
+</main>
+
+<script>
+    function enviarFormulario(event) {
+        event.preventDefault(); // Evita recarregar a página
+
+        const form = event.target;
+        const tipoItem = form.querySelector('select[name="tipoItem"]').value || "Item";
+
+        // Redireciona para a página de agradecimento passando o tipo de item
+        window.location.href = `obrigado.html?item=${encodeURIComponent(tipoItem)}`;
+    }
+</script>
+
+</body>
+</html>
