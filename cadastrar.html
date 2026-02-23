@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2F55A4;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 30px auto;
+            background: rgb(252, 252, 252);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #030303;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #f8a425;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Plataforma de Doação & Voluntariado ❤️</h1>
+    <p>Doe roupas, móveis ou seu tempo para ajudar quem precisa</p>
+</header>
+
+<main>
+    <h2>Cadastro de Doação</h2>
+    <p>Preencha o formulário abaixo e entraremos em contato</p>
+
+    <form action="doar.html" onsubmit="alert('Cadastro realizado com sucesso!')">
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Seu nome completo" required>
+    
+        <label for="telefone">Telefone / WhatsApp</label>
+        <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+    
+        <label for="nascimento">Data de Nascimento</label>
+        <input type="date" id="nascimento" required>
+    
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" placeholder="Rua, Avenida, etc." required>
+    
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" placeholder="Cidade" required>
+    
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" placeholder="Estado" required>
+
+    
+        <button type="submit">Cadastrar</button>
+    </form>
+    
+</main>
+
+<footer>
+    &copy; 2026 Plataforma de Doação e Voluntariado – Projeto Integrador
+</footer>
+
+
+</body>
+</html>
