@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Obrigado por se voluntariar!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+        }
+        header {
+            background: #2F55A4;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        main {
+            max-width: 600px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #f5f7fa;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2F55A4;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #f1c056;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background: #1f3f78;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Plataforma de Doação & Voluntariado ❤️</h1>
+    <p>Conectando pessoas, recursos e solidariedade.</p>
+</header>
+
+<main>
+    <h2 id="mensagemPrincipal">Obrigado por se voluntariar!</h2>
+    <p>Você se inscreveu com sucesso para ajudar a instituição <span id="nomeInstituicao"></span> 🙌</p>
+    <a href="doar.html">Voltar ao Início</a>
+</main>
+
+<script>
+    // Pegar a instituição da URL
+    const params = new URLSearchParams(window.location.search);
+    const instituicao = params.get('instituicao') || "Instituição";
+    document.getElementById('nomeInstituicao').innerText = instituicao;
+</script>
+
+</body>
+</html>
